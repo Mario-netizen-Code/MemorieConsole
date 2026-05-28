@@ -1,0 +1,4 @@
+tailer.exe
+*.exe
+*.test
+*.out
