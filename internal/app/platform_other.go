@@ -1,11 +1,20 @@
 //go:build !windows
 
-package main
+package app
 
 import (
+	"fmt"
 	"os"
 	"strconv"
 )
+
+func openFileShared(path string) (*os.File, error) {
+	return os.Open(path)
+}
+
+func clearScreen() {
+	fmt.Print("\033[2J\033[H")
+}
 
 func terminalWidth() int {
 	cols := os.Getenv("COLUMNS")
